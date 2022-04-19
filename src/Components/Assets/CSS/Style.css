@@ -1,0 +1,168 @@
+/* welcome page */
+body {
+  overflow-x: hidden;
+  margin: 0px 20px 0px;
+}
+.welcome-fluid {
+  font-size: 14px;
+}
+
+.welcome-fluid .brand {
+  font-size: 14px;
+}
+@media all and (min-width: 320px) {
+  .welcome-fluid .brand {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .welcome-fluid .toggle {
+    display: none;
+  }
+}
+/* End of WELCOME PAGE */
+
+/* APPBAR start from here*/
+
+.appbar-fluid {
+  background-color: #fff !important;
+  color: #253237;
+  font-weight: 500;
+}
+
+/* APPBAR ends here*/
+
+/* BANNER start from here*/
+.banner-fluid img {
+  width: 100%;
+  height: 660px;
+  position: relative;
+  background: linear-gradient(
+    0deg,
+    rgba(255 255 255 / 54%),
+    rgba(216, 205, 211, 0.69)
+  );
+  background-blend-mode: darken;
+}
+
+.caro {
+  text-align: left;
+
+  position: absolute;
+  top: -340px;
+  left: -50px;
+}
+.caro p,
+h3 {
+  color: #253237;
+}
+.caro h3 {
+  font-weight: 400;
+  font-size: 24px;
+  color: #666;
+  margin: 10px 0px;
+}
+
+.caro button.btn {
+  padding: 2px 3px;
+  border-radius: 14px;
+  transition: 2s;
+  font-size: 8px;
+  font-weight: 400;
+  background: #52b78e;
+  font-size: 22px;
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -ms-transition: 2s;
+  -o-transition: 2s;
+}
+
+/* APPBAR ends here*/
+/* banner box */
+
+.bannerBox-fluid .banner-img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* best seller option */
+
+/* .prev:hover,
+.next:hover {
+  background: #52b78e;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+} */
+
+/*  */
+.images .card-img {
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  cursor: pointer;
+}
+
+.content {
+  position: absolute;
+  padding-left: 10px;
+}
+.content .btn {
+  padding: 5px 5px;
+}
+.content .btn:hover {
+  margin-left: 15px;
+  color: #63c69f;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.arrow {
+  background: #63c69f;
+  height: 20px;
+  width: 20px;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 50%;
+}
+.banner-img {
+  transition: transform 0.4s;
+}
+.banner-img:hover {
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+}
+/* featured __ img */
+.featured__img {
+  transition: transform 0.4s;
+}
+.featured__img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.grocery__img {
+  transition: transform 0.4s;
+  -webkit-transition: transform 0.4s;
+  -moz-transition: transform 0.4s;
+  -ms-transition: transform 0.4s;
+  -o-transition: transform 0.4s;
+}
+.grocery__img:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
