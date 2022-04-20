@@ -15,8 +15,8 @@ import Sponsor from "./Sponsor";
 const Home = () => {
   return (
     <>
-      <Welcome />
-      <Appbar />
+     
+
       <Banner />
       <Service />
       <BestSeller />
@@ -26,7 +26,7 @@ const Home = () => {
       <FeaturedProducts />
       <Grocery />
       <RecentlyAdded />
-      <Sponsor/>
+      <Sponsor />
     </>
   );
 };
