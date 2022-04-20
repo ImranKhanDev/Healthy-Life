@@ -8,7 +8,9 @@ import Categories from "./Categories";
 import FeaturedProducts from "./FeaturedProducts";
 import Grocery from "./Grocery";
 import MiddleCategory from "./MiddleCategory/MiddleCategory";
+import RecentlyAdded from "./RecentAdded";
 import Service from "./Service";
+import Sponsor from "./Sponsor";
 
 const Home = () => {
   return (
@@ -22,7 +24,9 @@ const Home = () => {
       <MiddleCategory />
       <BannerBox />
       <FeaturedProducts />
-      <Grocery/>
+      <Grocery />
+      <RecentlyAdded />
+      <Sponsor/>
     </>
   );
 };

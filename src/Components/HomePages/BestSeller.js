@@ -23,6 +23,7 @@ const BestSeller = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+    autoplay:true,
     slidesToScroll: 2,
     initialSlide: 0,
     responsive: [

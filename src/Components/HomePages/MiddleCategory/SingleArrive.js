@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Card, Container } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { BsStarFill, BsStar } from "react-icons/bs";
 const SingleArrive = ({ pd }) => {
   // console.log(pd);
   return (
@@ -27,7 +27,13 @@ const SingleArrive = ({ pd }) => {
             <Card.Body>
               <Card.Title>{pd?.name}</Card.Title>
               <Card.Text>{pd?.title}</Card.Text>
-              <Card.Text>{pd?.rating}</Card.Text>
+              <Card.Text>
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStar />
+              </Card.Text>
               <Card.Text>{pd?.price}</Card.Text>
             </Card.Body>
           </Card>
@@ -41,10 +47,16 @@ const SingleArrive = ({ pd }) => {
             }}
           >
             <Card.Img variant="top" src={pd?.img} />
-            <Card.Body >
+            <Card.Body>
               <Card.Title>{pd?.name}</Card.Title>
               <Card.Text>{pd?.title}</Card.Text>
-              <Card.Text>{pd?.rating}</Card.Text>
+              <Card.Text>
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStarFill className="text-warning" />
+                <BsStar />
+              </Card.Text>
               <Card.Text>{pd?.price}</Card.Text>
             </Card.Body>
           </Card>

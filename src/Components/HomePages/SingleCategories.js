@@ -3,6 +3,7 @@ import { Col, Card, Container } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BiRightArrow } from "react-icons/bi";
+import { BsStarFill, BsStar } from "react-icons/bs";
 const SingleCategories = ({ pd }) => {
   console.log(pd);
 

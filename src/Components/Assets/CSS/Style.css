@@ -130,6 +130,10 @@ h3 {
   color: white;
   padding: 5px 5px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 .banner-img {
   transition: transform 0.4s;
@@ -154,10 +158,6 @@ h3 {
 }
 .grocery__img {
   transition: transform 0.4s;
-  -webkit-transition: transform 0.4s;
-  -moz-transition: transform 0.4s;
-  -ms-transition: transform 0.4s;
-  -o-transition: transform 0.4s;
 }
 .grocery__img:hover {
   transform: scale(1.1);
@@ -165,4 +165,14 @@ h3 {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+.slick-prev:before,
+.slick-next:before {
+ 
+
+  font-size: 22px;
+}
+.slick-prev:before:hover,
+.slick-next:before:hover {
+  background: #63c69f;
 }

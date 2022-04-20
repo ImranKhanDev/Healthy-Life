@@ -3,14 +3,14 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import SingleDeals from "./SingleDeals";
+import SingleAdded from "./SingleAdded";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
-const HotDeals = () => {
+const RecentlyAdded = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    fetch("/newArrive.json")
+    fetch("/sellerDb.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -21,18 +21,17 @@ const HotDeals = () => {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    autoplay: true,
-    pauseOnHover: true,
-    slidesToShow: 1,
+    speed: 500,autoplay:true,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay:true,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true,
         },
@@ -40,9 +39,9 @@ const HotDeals = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -57,12 +56,12 @@ const HotDeals = () => {
   return (
     <>
       <div
-        className=" d-flex  justify-content-between align-items-center "
-        style={{ paddingLeft: 8 }}
+        className=" d-flex  justify-content-between align-items-center"
+        style={{ paddingLeft: 18 }}
       >
         <div className="text-start">
-          <h2> Hot Deals</h2>
-          <p>Add bestselling products to weekly line up</p>
+          <h2> Recently Added</h2>
+          <p>Add products to weekly line up.</p>
         </div>
         <div className="div d-flex">
           <div className="prev ">
@@ -73,7 +72,7 @@ const HotDeals = () => {
                 color: "grey",
                 cursor: "pointer",
                 height: "20px",
-                width: "20px",
+                width: "20",
                 border: "2px solid grey",
                 borderRadius: "50%",
               }}
@@ -88,7 +87,7 @@ const HotDeals = () => {
                 marginRight: 30,
                 cursor: "pointer",
                 height: "20px",
-                width: "20px",
+                width: "20",
                 border: "2px solid grey",
                 borderRadius: "50%",
               }}
@@ -98,11 +97,12 @@ const HotDeals = () => {
         </div>
       </div>
 
-      <Row className="">
+      <Row className="g-4">
         <Col>
+          {" "}
           <Slider ref={sliderRef} {...settings}>
             {products?.map((pd) => (
-              <SingleDeals pd={pd} id={pd.id}></SingleDeals>
+              <SingleAdded pd={pd} id={pd.id}></SingleAdded>
             ))}
           </Slider>
         </Col>
@@ -111,4 +111,4 @@ const HotDeals = () => {
   );
 };
 
-export default HotDeals;
+export default RecentlyAdded;

@@ -27,6 +27,7 @@ const FeaturedProducts = () => {
     speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay:true,
     initialSlide: 0,
     responsive: [
       {
