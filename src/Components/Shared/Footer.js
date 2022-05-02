@@ -28,14 +28,15 @@ const Footer = () => {
             Magento, Prestashop, Opencart.
           </Card.Text>
           <Card.Text>
-            <div className="d-flex  justify-content-between align-items-center">
-              <span>
+            <div className="d-flex  justify-content-start align-items-center">
+              <p>
                 <FaPhoneVolume size={60} />
-              </span>
-              <span>
-                <h4>NEED HELP?</h4>
-                <p>(+800) 345 678, (+800) 123 456</p>
-              </span>
+              </p>
+              <p>
+                <span>NEED HELP?</span>
+                <span>(+880) 18124 6889 90,</span>
+                <span>(+880) 1567 889 149</span>
+              </p>
             </div>
           </Card.Text>
           <Card.Text>
@@ -51,12 +52,9 @@ const Footer = () => {
           <Card.Text>
             <h5>HEALTHY LIFE</h5>
             <hr
+              className="hr-style"
               style={{
-                width: "24%",
-                height: "5px",
-                textAlign: "left",
-                marginLeft: 0,
-                backgroundColor: "#4FB68D",
+              
               }}
             />{" "}
             <br />
@@ -90,12 +88,9 @@ const Footer = () => {
           <Card.Text>
             <h5>Custom Links</h5>
             <hr
+            className="hr-style"
               style={{
-                width: "24%",
-                height: "5px",
-                textAlign: "left",
-                marginLeft: 0,
-                backgroundColor: "#4FB68D",
+              
               }}
             />{" "}
             <br />
@@ -129,12 +124,9 @@ const Footer = () => {
           <Card.Text>
             <h5>NewsLetter</h5>
             <hr
+              className="hr-style"
               style={{
-                width: "24%",
-                height: "5px",
-                textAlign: "left",
-                marginLeft: 0,
-                backgroundColor: "#4FB68D",
+              
               }}
             />{" "}
             <br />

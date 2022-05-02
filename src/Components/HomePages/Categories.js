@@ -6,14 +6,16 @@ import Slider from "react-slick";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import SingleCategories from "./SingleCategories";
+import CategoriesDb from "../Assets/FakeData/CategoriesDb";
 const Categories = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState(CategoriesDb);
+  console.log(products)
 
-  useEffect(() => {
-    fetch("/categoriesDb.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/categoriesDb.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
 
   const sliderRef = useRef(null);
   // console.log(sliderRef.current);
@@ -103,7 +105,7 @@ const Categories = () => {
           {" "}
           <Slider ref={sliderRef} {...settings}>
             {products?.map((pd) => (
-              <SingleCategories pd={pd} id={pd.id}></SingleCategories>
+              <SingleCategories pd={pd} key={pd?.id}></SingleCategories>
             ))}
           </Slider>
         </Col>

@@ -8,6 +8,8 @@ import Home from "./Components/HomePages/Home";
 import Footer from "./Components/Shared/Footer";
 import Appbar from "./Components/Shared/Appbar";
 import Welcome from "./Components/Shared/Welcome";
+
+import SingleProductDetails from "./Components/HomePages/SingleProductDetails/SingleProductDetails.js";
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route
+            path="/singleProductDetails/:id"
+            element={<SingleProductDetails />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

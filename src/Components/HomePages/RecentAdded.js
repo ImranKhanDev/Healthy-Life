@@ -5,18 +5,19 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import SingleAdded from "./SingleAdded";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import SellerDb from "../Assets/FakeData/SellerDb";
 
 const RecentlyAdded = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState(SellerDb);
 
-  useEffect(() => {
-    fetch("/sellerDb.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/sellerDb.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
 
   const sliderRef = useRef(null);
-  console.log(sliderRef.current);
+  // console.log(sliderRef.current);
 
   var settings = {
     dots: false,
@@ -102,7 +103,7 @@ const RecentlyAdded = () => {
           {" "}
           <Slider ref={sliderRef} {...settings}>
             {products?.map((pd) => (
-              <SingleAdded pd={pd} id={pd.id}></SingleAdded>
+              <SingleAdded pd={pd} key={pd.id}></SingleAdded>
             ))}
           </Slider>
         </Col>

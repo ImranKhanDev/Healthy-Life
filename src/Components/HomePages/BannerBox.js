@@ -8,22 +8,22 @@ const BannerBox = () => {
     <div className="bannerBox-fluid mt-4">
       <>
         <Row className="">
-          <div className="banner-content d-flex  justify-content-around mx-auto align-items-center">
-            <div className="">
+          <div className="banner-content d-flex  justify-content-between mx-auto align-items-center">
+            <div className="hidden">
               <img
                 className="banner-img featured__img"
                 src={bannerImg}
                 alt="banner_box"
               />
             </div>
-            <div className="">
+            <div className="hidden">
               <img
                 className="banner-img featured__img"
                 src={bannerImg2}
                 alt="banner_box"
               />
             </div>
-            <div className="">
+            <div className="hidden">
               <img
                 className="banner-img featured__img"
                 src={bannerImg3}

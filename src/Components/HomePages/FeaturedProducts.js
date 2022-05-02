@@ -6,20 +6,21 @@ import Slider from "react-slick";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import SingleFeatured from "./SingleFeatured";
+import SellerDb from "../Assets/FakeData/SellerDb";
 
 
 
 const FeaturedProducts = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState(SellerDb);
 
-  useEffect(() => {
-    fetch("/sellerDb.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/SellerDb.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
 
   const sliderRef = useRef(null);
-  console.log(sliderRef.current);
+  // console.log(sliderRef.current);
 
   var settings = {
     dots: false,
@@ -106,7 +107,7 @@ const FeaturedProducts = () => {
           <Slider ref={sliderRef} {...settings}>
 
             {products?.map((pd) => (
-              <SingleFeatured pd={pd} id={pd.id}></SingleFeatured>
+              <SingleFeatured pd={pd} key={pd.id}></SingleFeatured>
             ))}
 
           </Slider>

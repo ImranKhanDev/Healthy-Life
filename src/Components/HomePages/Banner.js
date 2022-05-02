@@ -16,7 +16,7 @@ const Banner = () => {
           <div class="carousel-item active">
             <img src={slider1} class="d-block img" alt="..." />
             <div class="carousel-caption  d-none d-md-block">
-              <div className="caro uppercase">
+              <div className="caro uppercase ">
                 <p>
                   {" "}
                   <i>Not fried not baked</i>{" "}
@@ -36,30 +36,32 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div class="carousel-item" style={{ backgroundColor: "red" }}>
+          <div class="carousel-item">
             <img src={slider2} class="d-block  " alt="..." />
-            <div class="carousel-caption d-none d-md-block"></div>
-            <div className="caro ">
-              <p style={{ fontWeight: 500 }}>
-                {" "}
-                <i>Not fried not baked</i>{" "}
-              </p>
-              <h3>
-                Freeze Dried Fruits
-                <br />
-                Pineapple Drinks
-              </h3>
-              <p style={{ fontWeight: 500 }}>
-                Free shipping on Qualified ordders Over $35
-              </p>
+            <div class="carousel-caption d-none d-md-block">
+              <div className="caro  ">
+                <p style={{ fontWeight: 500 }}>
+                  {" "}
+                  <i>Not fried not baked</i>{" "}
+                </p>
+                <h3>
+                  Freeze Dried Fruits
+                  <br />
+                  Pineapple Drinks
+                </h3>
+                <p style={{ fontWeight: 500 }}>
+                  Free shipping on Qualified ordders Over $35
+                </p>
 
-              <button
-                className="btn 
+                <button
+                  className="btn 
                   "
-              >
-                SHOW NOW
-              </button>
+                >
+                  SHOW NOW
+                </button>
+              </div>
             </div>
+            >
           </div>
         </div>
       </div>

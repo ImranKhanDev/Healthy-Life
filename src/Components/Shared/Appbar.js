@@ -7,13 +7,13 @@ const Appbar = () => {
     <>
       <div className="appbar-fluid" style={{ paddingLeft: 18 }}>
         <Navbar collapseOnSelect expand="lg">
-          <Navbar.Brand href="#home" className="logo">
+          <Navbar.Brand href="/home" className="logo">
             Healthylife
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#features">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Fresh Food" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
                   Fresh Fruit
