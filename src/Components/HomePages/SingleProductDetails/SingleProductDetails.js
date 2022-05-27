@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import SellerDb from "../../Assets/FakeData/SellerDb";
 import detailsBanner from "../../Assets/images/product_bg.jpg";
 import free from "../../Assets/images/free.png";
@@ -15,28 +15,28 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 import { BiMessageAltDots, BiMessageEdit } from "react-icons/bi";
+import productsDB from "../../Assets/FakeData/productsDB";
 
 const SingleProductDetails = (props) => {
   const { id } = useParams();
+
   const [show, setShow] = useState(false);
   const [lg, setLgShow] = useState(false);
 
-  // add to cart modal start
+  // add to cart modal state
   const [showCart, setShowCart] = useState(false);
   //wishlist  modal
 
   const [wish, setWish] = useState(false);
 
-  const [productsDetails, setProductsDetails] = useState(SellerDb);
+  // const [productsDetails, setProductsDetails] = useState(productsDB.SellerDb);
+  const [productsDetails, setProductsDetails] = useState(productsDB);
 
   const detailsProducts = productsDetails?.find(
-    (pDetails) => pDetails?.id == id
+    (pDetails) => pDetails?.sellerdb.id == id
   );
-  // const [click, setClick] = useState("");
-  // const handleClick = (e) => {
-  //   setClick(click + 1);
-  //   e.preventDefault();
-  // };
+
+
   return (
     <>
       {/* cart modal  */}
@@ -53,8 +53,7 @@ const SingleProductDetails = (props) => {
         </Modal.Header>
         <Modal.Body>This feature is coming soon.</Modal.Body>
       </Modal>
-      {/* cart modal  */}
-      {/* wish list modal  */}
+
       <Modal
         size="sm"
         show={wish}
@@ -90,14 +89,14 @@ const SingleProductDetails = (props) => {
               <div className="d-flex justify-content-between align-items-center">
                 <div>
                   <img
-                    src={detailsProducts?.img}
+                    src={detailsProducts?.sellerdb?.img}
                     style={{ height: 240, width: 300 }}
-                    alt="singleproductimage"
+                    alt="single_product_image"
                   />
                 </div>
                 <div>
-                  <p>{detailsProducts?.name}</p>
-                  <p>{detailsProducts?.price}</p>
+                  <p>{detailsProducts?.sellerDb?.name}</p>
+                  <p>{detailsProducts?.sellerDb?.price}</p>
                   <p>Dimensions : 40x60cm</p>
                   <p>
                     {" "}
@@ -112,17 +111,23 @@ const SingleProductDetails = (props) => {
 
       <div className="singleProduct">
         <img src={detailsBanner} alt="product_background" />
-        <h4>Best Seller &gt; Product Details &gt; {detailsProducts?.name}</h4>
+        <h4>
+          Best Seller &gt; Product Details &gt;{" "}
+          {detailsProducts?.sellerdb?.name}
+        </h4>
         <Row>
           <Col>
             <div className="singleProductImg">
-              <img src={detailsProducts?.img} alt="singleproductimage" />
+              <img
+                src={detailsProducts?.sellerdb?.img}
+                alt="single_product_image"
+              />
             </div>
           </Col>
           <Col>
             <div className="productContent text-start py-4">
               <div className="productTti">
-                <h3>{detailsProducts.name}</h3>
+                <h3>{detailsProducts?.sellerdb.name}</h3>
               </div>
               <div className="content d-flex justify-content-between align-items-center">
                 <span style={{ color: "yellow", marginRight: 15 }}>
@@ -165,7 +170,7 @@ const SingleProductDetails = (props) => {
                 </div>
               </div>
               <br />
-              <h1 className="price">${detailsProducts.price}</h1>
+              <h1 className="price">${detailsProducts?.sellerdb?.price}</h1>
               <br />
               <p className="description">
                 Whether you're exploring the woods or the city, the Brixton™
@@ -230,25 +235,26 @@ const SingleProductDetails = (props) => {
             <div className="product-security text-start">
               <ul style={{ listStyle: "none" }}>
                 <li>
-                  <img src={free} />
+                  <img src={free} alt="delivery" />
                   <span>
                     Security Policy (Edit With Customer Reassurance Module)
                   </span>
                 </li>
                 <li>
-                  <img src={back} />
+                  <img src={back} alt="delivery" />
                   <span>
                     Delivery Policy (Edit With Customer Reassurance Module)
                   </span>
                 </li>
                 <li>
-                  <img src={money} />
+                  <img src={money} alt="delivery" />
                   <span>
                     Return Policy (Edit With Customer Reassurance Module)
                   </span>
                 </li>
               </ul>
             </div>
+            {/* tab modal  */}
           </Col>
         </Row>
       </div>

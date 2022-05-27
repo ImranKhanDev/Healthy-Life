@@ -5,10 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import SingleSeller from "./SingleSeller";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import SellerDb from "../Assets/FakeData/SellerDb";
+// import SellerDb from "../Assets/FakeData/SellerDb";
+import productsDB from "../Assets/FakeData/productsDB";
 
 const BestSeller = () => {
-  const [products, setProducts] = useState(SellerDb);
+  // const [products, setProducts] = useState(productsDB.SellerDb);
+  const [products, setProducts] = useState(productsDB);
 
   // useEffect(() => {
   //   fetch("/SellerDb.json")
@@ -24,7 +26,7 @@ const BestSeller = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    autoplay:true,
+    autoplay: true,
     slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
@@ -103,7 +105,7 @@ const BestSeller = () => {
           {" "}
           <Slider ref={sliderRef} {...settings}>
             {products?.map((pd) => (
-              <SingleSeller pd={pd} key={pd?.id}></SingleSeller>
+              <SingleSeller pd={pd} key={pd?.sellerdb.id}></SingleSeller>
             ))}
           </Slider>
         </Col>

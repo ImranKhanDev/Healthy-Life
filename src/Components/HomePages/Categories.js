@@ -6,10 +6,12 @@ import Slider from "react-slick";
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import SingleCategories from "./SingleCategories";
-import CategoriesDb from "../Assets/FakeData/CategoriesDb";
+
+import productsDB from "../Assets/FakeData/productsDB";
 const Categories = () => {
-  const [products, setProducts] = useState(CategoriesDb);
-  console.log(products)
+  // const [products, setProducts] = useState(productsDB.Category);z
+  const [products, setProducts] = useState(productsDB);
+  // console.log(products);
 
   // useEffect(() => {
   //   fetch("/categoriesDb.json")
@@ -104,8 +106,8 @@ const Categories = () => {
         <Col>
           {" "}
           <Slider ref={sliderRef} {...settings}>
-            {products?.map((pd) => (
-              <SingleCategories pd={pd} key={pd?.id}></SingleCategories>
+            {products.map((pd) => (
+              <SingleCategories pd={pd} key={pd?.category.id}></SingleCategories>
             ))}
           </Slider>
         </Col>

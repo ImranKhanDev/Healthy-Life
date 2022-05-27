@@ -6,9 +6,11 @@ import Slider from "react-slick";
 import SingleAdded from "./SingleAdded";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import SellerDb from "../Assets/FakeData/SellerDb";
+import productsDB from "../Assets/FakeData/productsDB";
 
 const RecentlyAdded = () => {
-  const [products, setProducts] = useState(SellerDb);
+  // const [products, setProducts] = useState(productsDB?.SellerDb);
+  const [products, setProducts] = useState(productsDB);
 
   // useEffect(() => {
   //   fetch("/sellerDb.json")
@@ -22,10 +24,11 @@ const RecentlyAdded = () => {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,autoplay:true,
+    speed: 500,
+    autoplay: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay:true,
+    autoplay: true,
     initialSlide: 0,
     responsive: [
       {
@@ -102,8 +105,8 @@ const RecentlyAdded = () => {
         <Col>
           {" "}
           <Slider ref={sliderRef} {...settings}>
-            {products?.map((pd) => (
-              <SingleAdded pd={pd} key={pd.id}></SingleAdded>
+            {products.map((pd) => (
+              <SingleAdded pd={pd} key={pd?.sellerdb?.id}></SingleAdded>
             ))}
           </Slider>
         </Col>

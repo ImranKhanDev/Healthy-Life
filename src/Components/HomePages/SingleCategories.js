@@ -26,15 +26,15 @@ const SingleCategories = ({ pd }) => {
                   height: "163px",
                   width: "540px",
                 }}
-                src={pd?.img}
+                src={pd?.category?.img}
               />
             </div>
             <div
               className="content"
               style={{ padding: "0px 15px", textAlign: "left" }}
             >
-              <Card.Title>{pd?.name}</Card.Title>
-              <Card.Text>{pd?.total}</Card.Text>
+              <Card.Title>{pd.category?.name}</Card.Title>
+              <Card.Text>{pd.category?.total}</Card.Text>
               <button className="btn">
                 Shop Now <BiRightArrow className="arrow" size={40} />
               </button>
@@ -59,15 +59,15 @@ const SingleCategories = ({ pd }) => {
                   height: "163px",
                   width: "540px",
                 }}
-                src={pd?.img}
+                src={pd?.category?.img}
               />
             </div>
             <div
               className="content"
               style={{ padding: "0px 15px", textAlign: "left" }}
             >
-              <Card.Title>{pd?.name}</Card.Title>
-              <Card.Text>{pd?.total}</Card.Text>
+              <Card.Title>{pd.category?.name}</Card.Title>
+              <Card.Text>{pd.category?.total}</Card.Text>
               <button className="btn">
                 Shop Now <BiRightArrow className="arrow" size={40} />
               </button>
@@ -75,7 +75,7 @@ const SingleCategories = ({ pd }) => {
           </Card.Body>
         </Card>
       </Col>
-   </>
+    </>
   );
 };
 

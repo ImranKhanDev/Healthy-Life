@@ -23,10 +23,10 @@ const SingleArrive = ({ pd }) => {
               marginBottom: "20px",
             }}
           >
-            <Card.Img variant="top" src={pd?.img} />
+            <Card.Img variant="top" src={pd?.newarrive?.img} />
             <Card.Body>
-              <Card.Title>{pd?.name}</Card.Title>
-              <Card.Text>{pd?.title}</Card.Text>
+              <Card.Title>{pd?.newarrive?.name}</Card.Title>
+              <Card.Text>{pd?.newarrive.title}</Card.Text>
               <Card.Text>
                 <BsStarFill className="text-warning" />
                 <BsStarFill className="text-warning" />
@@ -34,7 +34,7 @@ const SingleArrive = ({ pd }) => {
                 <BsStarFill className="text-warning" />
                 <BsStar />
               </Card.Text>
-              <Card.Text>{pd?.price}</Card.Text>
+              <Card.Text>{pd?.newarrive?.price}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -46,10 +46,10 @@ const SingleArrive = ({ pd }) => {
               marginRight: "20px",
             }}
           >
-            <Card.Img variant="top" src={pd?.img} />
+            <Card.Img variant="top" src={pd?.newarrive?.img} />
             <Card.Body>
-              <Card.Title>{pd?.name}</Card.Title>
-              <Card.Text>{pd?.title}</Card.Text>
+              <Card.Title>{pd?.newarrive?.name}</Card.Title>
+              <Card.Text>{pd?.newarrive.title}</Card.Text>
               <Card.Text>
                 <BsStarFill className="text-warning" />
                 <BsStarFill className="text-warning" />
@@ -57,7 +57,7 @@ const SingleArrive = ({ pd }) => {
                 <BsStarFill className="text-warning" />
                 <BsStar />
               </Card.Text>
-              <Card.Text>{pd?.price}</Card.Text>
+              <Card.Text>{pd?.newarrive?.price}</Card.Text>
             </Card.Body>
           </Card>
         </Col>

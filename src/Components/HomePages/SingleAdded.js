@@ -28,21 +28,21 @@ const SingleAdded = ({ pd }) => {
                 <Card.Img
                   variant="top"
                   className="featured__img"
-                  src={pd?.img}
+                  src={pd?.sellerdb?.img}
                 />
               </div>
               <div className="div-body">
                 <Card.Body>
-                  <Card.Title>{pd?.name}</Card.Title>
-                  <Card.Text>{pd?.title}</Card.Text>
+                  <Card.Title>{pd?.sellerdb?.name}</Card.Title>
+                  <Card.Text>{pd?.sellerdb?.title}</Card.Text>
                   <Card.Text>
-                <BsStarFill className="text-warning" />
-                <BsStarFill className="text-warning" />
-                <BsStarFill className="text-warning" />
-                <BsStarFill className="text-warning" />
-                <BsStar />
-              </Card.Text>
-                  <Card.Text>{pd?.price}</Card.Text>
+                    <BsStarFill className="text-warning" />
+                    <BsStarFill className="text-warning" />
+                    <BsStarFill className="text-warning" />
+                    <BsStarFill className="text-warning" />
+                    <BsStar />
+                  </Card.Text>
+                  <Card.Text>{pd?.sellerdb?.price}</Card.Text>
                 </Card.Body>
               </div>
             </div>

@@ -5,10 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import SingleDeals from "./SingleDeals";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import NewArrive from "../../Assets/FakeData/NewArrive";
+// import NewArrive from "../../Assets/FakeData/NewArrive";
+import productsDB from "../../Assets/FakeData/productsDB";
 
 const HotDeals = () => {
-  const [products, setProducts] = useState(NewArrive);
+  const [products, setProducts] = useState(productsDB);
 
   // useEffect(() => {
   //   fetch("/newArrive.json")
@@ -103,7 +104,7 @@ const HotDeals = () => {
         <Col>
           <Slider ref={sliderRef} {...settings}>
             {products?.map((pd) => (
-              <SingleDeals pd={pd} key={pd?.id}></SingleDeals>
+              <SingleDeals pd={pd} key={pd?.newarrive.id}></SingleDeals>
             ))}
           </Slider>
         </Col>
