@@ -61,7 +61,6 @@ const Banner = () => {
                 </button>
               </div>
             </div>
-            >
           </div>
         </div>
       </div>

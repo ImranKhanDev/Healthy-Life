@@ -9,7 +9,10 @@ const SingleSeller = ({ pd }) => {
   return (
     <>
       <div className="my-5">
-        <Link to={`/singleProductDetails/${pd.sellerdb?.id}`}>
+        <Link
+          to={`/singleProductDetails/${pd.sellerdb?.id}`}
+          style={{ textDecoration: "none", color: "black", fontWeight: "700" }}
+        >
           <Col style={{ marginRight: "20px" }}>
             <Card style={{ textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
               <Card.Img variant="top" src={pd?.sellerdb?.img} />
@@ -24,7 +27,8 @@ const SingleSeller = ({ pd }) => {
                   <BsStarFill className="text-warning" />
                   <BsStar />
                 </Card.Text>
-                <Card.Text>{pd?.sellerdb.price}</Card.Text>
+                <Card.Text>Price : $ {pd?.sellerdb.price}</Card.Text>
+                <button style={styles.btnStyle}>Get Details</button>
               </Card.Body>
             </Card>
           </Col>
@@ -34,4 +38,13 @@ const SingleSeller = ({ pd }) => {
   );
 };
 
+const styles = {
+  btnStyle: {
+    backgroundColor: "#FFC107",
+    padding: "2px 8px",
+    color: "black",
+    borderRadius:"5px",
+    border:'none',
+  },
+};
 export default SingleSeller;

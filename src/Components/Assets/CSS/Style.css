@@ -1,7 +1,7 @@
 /* welcome page */
 body {
   overflow-x: hidden;
-  margin: 0px 20px 0px;
+  scroll-behavior: smooth;
   text-align: center;
 }
 .welcome-fluid {
@@ -16,6 +16,7 @@ body {
     text-align: center;
     margin: 0 auto;
   }
+
   .welcome-fluid .toggle {
     display: none;
   }
@@ -339,3 +340,53 @@ h3 {
 .me-2:hover {
   color: #63c69f;
 }
+
+/* responsive for tablet 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar-lil {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .service {
+    margin-bottom: 12px;
+  }
+  .best-seller {
+    margin-top: 6.5rem;
+  }
+  .googleImg {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .googleImg .gp {
+    margin-left: -14%;
+  }
+  .inner {
+    margin-left: 8px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .appbar {
+    margin-right: 6%;
+  }
+  .best-seller {
+    margin-top: 4.5rem;
+  }
+  .pointer {
+    margin-right: 20px;
+  }
+  .singleCat {
+    width: 100%;
+  }
+}
+.googleImg .gp {
+  margin-left: -20%;
+}
+.inner {
+  margin-left: 8px;
+}
+

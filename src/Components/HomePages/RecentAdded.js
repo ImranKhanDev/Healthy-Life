@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import SingleAdded from "./SingleAdded";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import SellerDb from "../Assets/FakeData/SellerDb";
+
 import productsDB from "../Assets/FakeData/productsDB";
 
 const RecentlyAdded = () => {

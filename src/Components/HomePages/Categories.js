@@ -60,7 +60,7 @@ const Categories = () => {
   return (
     <>
       <div
-        className="   d-flex  justify-content-between align-items-center"
+        className="popular pt-5  d-flex  justify-content-between align-items-center"
         style={{ paddingLeft: 18 }}
       >
         <div className="text-start">
@@ -68,7 +68,7 @@ const Categories = () => {
 
           <p>Add Popular Categories to weekly line up</p>
         </div>
-        <div className="div d-flex">
+        <div className="div d-flex pointer">
           <div className="prev ">
             <AiOutlineArrowLeft
               size={10}
@@ -107,7 +107,10 @@ const Categories = () => {
           {" "}
           <Slider ref={sliderRef} {...settings}>
             {products.map((pd) => (
-              <SingleCategories pd={pd} key={pd?.category.id}></SingleCategories>
+              <SingleCategories
+                pd={pd}
+                key={pd?.category.id}
+              ></SingleCategories>
             ))}
           </Slider>
         </Col>

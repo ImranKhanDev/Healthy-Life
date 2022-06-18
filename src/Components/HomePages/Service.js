@@ -6,10 +6,10 @@ import service4 from "../Assets/images/service_item4.png";
 import service1 from "../Assets/images/service_item1.png";
 const Service = () => {
   return (
-    <div className="service-fluid my-4">
+    <div className="service-fluid my-4 pb-5 service">
       <>
         <Row>
-          <div className="service-content d-flex  justify-content-around align-items-center text-start">
+          <div className="service-content d-flex  justify-content-around align-items-center text-start content">
             <div className="service-item d-flex  justify-content-around align-items-center">
               <div>
                 <img
@@ -24,7 +24,7 @@ const Service = () => {
               </div>
             </div>
             <div className="service-item d-flex  justify-content-between align-items-center">
-              <div>
+              <div className="img">
                 <img
                   src={service3}
                   style={{ marginRight: "15px" }}

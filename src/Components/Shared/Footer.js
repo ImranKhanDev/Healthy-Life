@@ -147,13 +147,16 @@ const Footer = () => {
               Sign Up
             </button>
           </Card.Text>
-          <Card.Text className="d-flex justify-content-around align-items-center">
+          <Card.Text className="googleImg d-flex justify-content-around align-items-center">
             <img
               src={googlePlay}
               style={{ marginRight: "5px" }}
               alt="google play image"
+              className="gp"
             />
-            <img src={playStore} alt="google play image" />
+            <img src={playStore}
+            className="ps"
+            alt="google play image" />
           </Card.Text>
         </Col>
       </Row>

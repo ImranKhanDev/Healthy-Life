@@ -10,7 +10,7 @@ import Grocery from "./Grocery";
 import MiddleCategory from "./MiddleCategory/MiddleCategory";
 import RecentlyAdded from "./RecentAdded";
 import Service from "./Service";
-import Description from "./SingleProductDetails/Description";
+
 import Sponsor from "./Sponsor";
 
 const Home = () => {
@@ -26,7 +26,6 @@ const Home = () => {
       <Grocery />
       <RecentlyAdded />
       <Sponsor />
-      <Description />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import SellerDb from "../../Assets/FakeData/SellerDb";
+
 import detailsBanner from "../../Assets/images/product_bg.jpg";
 import free from "../../Assets/images/free.png";
 import money from "../../Assets/images/money.png";
@@ -35,7 +35,6 @@ const SingleProductDetails = (props) => {
   const detailsProducts = productsDetails?.find(
     (pDetails) => pDetails?.sellerdb.id == id
   );
-
 
   return (
     <>
@@ -96,7 +95,7 @@ const SingleProductDetails = (props) => {
                 </div>
                 <div>
                   <p>{detailsProducts?.sellerDb?.name}</p>
-                  <p>{detailsProducts?.sellerDb?.price}</p>
+                  <p> {detailsProducts?.sellerDb?.price}</p>
                   <p>Dimensions : 40x60cm</p>
                   <p>
                     {" "}

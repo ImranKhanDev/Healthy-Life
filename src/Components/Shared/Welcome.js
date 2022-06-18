@@ -16,8 +16,8 @@ const Welcome = () => {
           bg="dark"
           variant="dark"
         >
-          <Navbar.Brand href="#home" className="brand">
-            Welcome you to Healthylife store!
+          <Navbar.Brand href="#home" className="brand welcome">
+            <span> Welcome you to Healthylife store!</span>
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"

@@ -58,7 +58,7 @@ const NewArrive = () => {
   return (
     <>
       <div className=" d-flex  justify-content-between align-items-center">
-        <div className="text-start">
+        <div className="text-start inner">
           <h2> New Arrive</h2>
           <p>New Products just arrive , buy your best product.</p>
         </div>

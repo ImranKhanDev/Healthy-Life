@@ -18,7 +18,7 @@ const productsDB = [
       id: "1",
       img: "https://i.ibb.co/JdXKPnq/card9.jpg",
       brand: "Meat House",
-      name: "Deliciuos Chinese Sushi",
+      name: "Deliciuos  Sushi",
       rating: "5(5)",
       price: "$ 21.45",
       available: "7801 In Stock",

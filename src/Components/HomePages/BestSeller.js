@@ -62,11 +62,11 @@ const BestSeller = () => {
         className=" d-flex  justify-content-between align-items-center"
         style={{ paddingLeft: 18 }}
       >
-        <div className="text-start">
+        <div className="text-start best-seller">
           <h2> Best Seller</h2>
           <p>Add bestselling products to weekly line up</p>
         </div>
-        <div className="div d-flex">
+        <div className="div d-flex best-seller pointer">
           <div className="prev ">
             <AiOutlineArrowLeft
               size={10}

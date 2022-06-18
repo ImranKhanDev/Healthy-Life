@@ -62,7 +62,7 @@ const HotDeals = () => {
         className=" d-flex  justify-content-between align-items-center "
         style={{ paddingLeft: 8 }}
       >
-        <div className="text-start">
+        <div className="text-start inner">
           <h2> Hot Deals</h2>
           <p>Add bestselling products to weekly line up</p>
         </div>
