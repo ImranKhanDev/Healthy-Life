@@ -10,6 +10,7 @@ import Appbar from "./Components/Shared/Appbar";
 import Welcome from "./Components/Shared/Welcome";
 
 import SingleProductDetails from "./Components/HomePages/SingleProductDetails/SingleProductDetails.js";
+import NotFound from "./Components/HomePages/NotFound/NotFound";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Welcome />
         <Appbar />
         <Routes>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route
@@ -24,6 +26,7 @@ function App() {
             element={<SingleProductDetails />}
           />
         </Routes>
+
         <Footer />
       </BrowserRouter>
     </div>
@@ -31,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+
+
