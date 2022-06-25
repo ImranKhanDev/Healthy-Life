@@ -2,8 +2,11 @@ import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import contact from "../Assets/images/contact.png";
 const Appbar = () => {
+  const { user,logOut } = useAuth();
+  console.log(user);
   return (
     <>
       <div className="appbar-fluid appbar" style={{ paddingLeft: 18 }}>
@@ -29,11 +32,21 @@ const Appbar = () => {
                 <span> Contact Us</span>
               </Link>
             </Nav>
-            <Nav>
+           {
+            user && user.email ? (
+              <Nav>
+              <Link style={style.nav} className="link" to="/login">
+                <span className="login" onClick={logOut}> logout</span>
+              </Link>
+            </Nav>
+            ):(
+              <Nav>
               <Link style={style.nav} className="link" to="/login">
                 <span className="login"> Login</span>
               </Link>
             </Nav>
+            )
+           }
             <Link to="/contact" style={style.nav}>
               <div className="ml-3 d-flex justify-content-around align-items-center">
                 <span>

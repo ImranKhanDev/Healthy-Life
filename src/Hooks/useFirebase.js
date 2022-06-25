@@ -18,6 +18,7 @@ const useFirebase = () => {
 
   // for register user : new users
   const registerUser = (email, password) => {
+    
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -43,7 +44,7 @@ const useFirebase = () => {
   };
 
   //login user -- existing user login
-  const loginUser = (email,password) => {
+  const loginUser = (email, password) => {
     const auth = getAuth;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -69,6 +70,6 @@ const useFirebase = () => {
     });
     return () => unsubscribe;
   }, []);
-  return { user, registerUser, logOut };
+  return { user, registerUser, logOut, loginUser };
 };
 export default useFirebase;

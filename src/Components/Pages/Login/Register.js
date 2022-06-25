@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 const Register = () => {
+  const {registerUser}=useAuth()
+
   const [registerData, setRegisterData] = useState();
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -17,7 +20,8 @@ const Register = () => {
       alert("Your information is incorrect.Please check again");
       return;
     }
-
+    registerUser(registerData.email,registerData.password)
+    alert("Your registration is successful")
     e.preventDefault();
   };
   return (
