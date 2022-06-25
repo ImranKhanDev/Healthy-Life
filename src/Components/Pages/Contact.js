@@ -7,9 +7,9 @@ import { AiFillInstagram } from "react-icons/ai";
 const Contact = () => {
   return (
     <div className="contact">
-      <div className="py-5" style={{ background: "black", color: "#fff" }}>
+      <div className="py-5 contact-bg" style={{ color: "#000" }}>
         <h1>Contact with us </h1>
-        <p>We're here for 24/7 support</p>
+        <h1>We're here for 24/7 support</h1>
       </div>
       <div className="container">
         <Row>
@@ -36,6 +36,7 @@ const Contact = () => {
                   marginRight: "10px",
                   color: "#ffffff",
                   textDecoration: "none",
+                  color: "#000",
                 }}
                 href="https://www.facebook.com/dreamcoder2022"
               >
@@ -49,6 +50,7 @@ const Contact = () => {
                   marginRight: "10px",
                   color: "#ffffff",
                   textDecoration: "none",
+                  color: "#000",
                 }}
               >
                 <FaWhatsappSquare /> <span>Whatsapp</span>
@@ -60,6 +62,7 @@ const Contact = () => {
                   marginRight: "10px",
                   color: "#ffffff",
                   textDecoration: "none",
+                  color: "#000",
                 }}
                 href="https://www.instagram.com/"
               >

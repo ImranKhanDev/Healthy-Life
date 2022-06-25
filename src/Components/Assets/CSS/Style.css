@@ -386,6 +386,23 @@ h3 {
 .googleImg .gp {
   margin-left: -20%;
 }
+.navbar-lil span {
+  font-size: 23px;
+  /* color: green; */
+}
+
+.contact-bg {
+  background-image: url("/public/banner.jpg");
+  opacity: 0.6;
+  overflow: hidden;
+}
+
+.login,
+.logo {
+  font-size: 23px;
+  margin-right: 10px;
+}
+
 .inner {
   margin-left: 8px;
 }
@@ -399,4 +416,12 @@ h3 {
 }
 .link:hover {
   color: #ffc107 !important;
+}
+/* services */
+.desc {
+  text-align: right;
+}
+.right {
+  text-align: left;
+  
 }

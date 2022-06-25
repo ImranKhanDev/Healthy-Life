@@ -15,27 +15,27 @@ const Appbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="me-auto navbar-lil ">
               <Link style={style.nav} className="link" to="/about">
-                About
+                <span> About</span>{" "}
               </Link>
               <Link style={style.nav} className="link" to="/services">
-                Services
+                <span> Services</span>
               </Link>
 
               <Link style={style.nav} className="link" to="/dashboard">
-                Dashboard
+                <span> Dashboard</span>
               </Link>
 
               <Link style={style.nav} className="link" to="/contact">
-                Contact Us
+                <span> Contact Us</span>
               </Link>
             </Nav>
             <Nav>
               <Link style={style.nav} className="link" to="/login">
-                Login
+                <span className="login"> Login</span>
               </Link>
             </Nav>
             <Link to="/contact" style={style.nav}>
-              <div className="d-flex justify-content-around align-items-center">
+              <div className="ml-3 d-flex justify-content-around align-items-center">
                 <span>
                   <img src={contact} alt="" />
                 </span>
