@@ -11,6 +11,7 @@ import Welcome from "./Components/Shared/Welcome";
 
 import SingleProductDetails from "./Components/HomePages/SingleProductDetails/SingleProductDetails.js";
 import NotFound from "./Components/HomePages/NotFound/NotFound";
+import Login from "./Components/Pages/Login/Login";
 function App() {
   return (
     <div className="App">
@@ -25,8 +26,8 @@ function App() {
             path="/singleProductDetails/:id"
             element={<SingleProductDetails />}
           />
+          <Route path="/login" element={<Login />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>
@@ -34,6 +35,3 @@ function App() {
 }
 
 export default App;
-
-
-

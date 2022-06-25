@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import contact from "../Assets/images/contact.png";
 const Appbar = () => {
   return (
@@ -50,17 +51,14 @@ const Appbar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="#features">Prices Drop</Nav.Link>
-              <Nav.Link href="#features">Contact Us</Nav.Link>
+              <Link style={{textDecoration: "none",marginRight:10}} to="/features">Price Drop</Link>
+              <Link style={{textDecoration: "none"}} to="/contact">Contact Us</Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">
-                <BsSearch
-                  size={20}
-                  style={{ marginRight: 20 }}
-                  className="search"
-                />
-              </Nav.Link>
+              {/* <Nav.Link href="/login">
+                Login
+              </Nav.Link> */}
+              <Link style={{textDecoration: "none"}} to="/login">Login</Link>
             </Nav>
             <Nav.Link href="#deets">
               <div className="d-flex justify-content-around align-items-center">
