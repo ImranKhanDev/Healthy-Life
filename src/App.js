@@ -16,6 +16,7 @@ import Services from "./Components/Pages/Services";
 import About from "./Components/Pages/About";
 import Contact from "./Components/Pages/Contact";
 import Dashboard from "./Components/Pages/Dashboard";
+import Register from "./Components/Pages/Login/Register";
 function App() {
   return (
     <div className="App">
@@ -35,6 +36,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </BrowserRouter>
