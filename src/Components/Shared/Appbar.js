@@ -36,7 +36,7 @@ const Appbar = () => {
             user && user.email ? (
               <Nav>
               <Link style={style.nav} className="link" to="/login">
-                <span className="login" onClick={logOut}> logout</span>
+                <span className="login" onClick={logOut}> logOut</span>
               </Link>
             </Nav>
             ):(

@@ -1,10 +1,12 @@
 import React from "react";
+import Spinner from "react-bootstrap/Spinner";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 const Register = () => {
-  const {registerUser}=useAuth()
+  const navigate = useNavigate();
+  const { registerUser } = useAuth();
 
   const [registerData, setRegisterData] = useState();
   const handleOnChange = (e) => {
@@ -20,8 +22,10 @@ const Register = () => {
       alert("Your information is incorrect.Please check again");
       return;
     }
-    registerUser(registerData.email,registerData.password)
-    alert("Your registration is successful")
+    registerUser(registerData.email, registerData.password);
+    alert("Your registration is successful");
+    navigate("/login");
+
     e.preventDefault();
   };
   return (
@@ -31,7 +35,7 @@ const Register = () => {
       <div className="container">
         <div className="row">
           <div className="col text-start">
-            <Form onSubmit={handleRegister}>
+           <Form onSubmit={handleRegister}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control
@@ -77,10 +81,12 @@ const Register = () => {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
-                Submit
+              <Button variant="primary" type="submit" className="text-center">
+                Register
               </Button>
             </Form>
+       
+
             <p>
               <Link to="/login"> Are you are a member ? Login first.</Link>
             </p>
