@@ -389,4 +389,14 @@ h3 {
 .inner {
   margin-left: 8px;
 }
-
+.link {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  font-size: 18px;
+}
+.link:hover {
+  color: #ffc107 !important;
+}

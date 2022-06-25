@@ -12,6 +12,10 @@ import Welcome from "./Components/Shared/Welcome";
 import SingleProductDetails from "./Components/HomePages/SingleProductDetails/SingleProductDetails.js";
 import NotFound from "./Components/HomePages/NotFound/NotFound";
 import Login from "./Components/Pages/Login/Login";
+import Services from "./Components/Pages/Services";
+import About from "./Components/Pages/About";
+import Contact from "./Components/Pages/Contact";
+import Dashboard from "./Components/Pages/Dashboard";
 function App() {
   return (
     <div className="App">
@@ -26,6 +30,10 @@ function App() {
             path="/singleProductDetails/:id"
             element={<SingleProductDetails />}
           />
+          <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />

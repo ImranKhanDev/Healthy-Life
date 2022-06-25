@@ -6,7 +6,7 @@ import slider2 from "../Assets/images/banner_2.jpg";
 
 const Banner = () => {
   return (
-    <div className="banner-fluid mb-5" style={{ textTransform: "uppercase" }}>
+    <div className="banner-fluid mb-5 py-3" style={{ textTransform: "uppercase" }}>
       <div
         id="carouselExampleCaptions"
         class="carousel slide"

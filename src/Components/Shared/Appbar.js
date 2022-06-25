@@ -8,59 +8,33 @@ const Appbar = () => {
     <>
       <div className="appbar-fluid appbar" style={{ paddingLeft: 18 }}>
         <Navbar collapseOnSelect expand="lg">
-          <Navbar.Brand href="/home" className="logo">
+          <Link style={style.nav} to="/home" className="logo">
             Healthylife
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto navbar-lil">
-              <Nav.Link href="/">Home</Nav.Link>
-              <NavDropdown title="Fresh Food" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  Fresh Fruit
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Fresh Vegetables
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Fresh Salad & Dips
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Milk Butter & Eggs
-                </NavDropdown.Item>
-              </NavDropdown>
+          <Navbar.Collapse id="responsive-navbar-nav ">
+            <Nav className="me-auto navbar-lil ">
+              <Link style={style.nav} className="link" to="/about">
+                About
+              </Link>
+              <Link style={style.nav} className="link" to="/services">
+                Services
+              </Link>
 
-              <NavDropdown
-                title="Fresh Vegetables"
-                id="collasible-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Potatoes & Sweet Potatoes
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Onions & Leeks
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Carrot & Root Vegetables
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Brocolli & Cauliflower
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Cabbage & Greens
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Link style={style.nav} className="link" to="/dashboard">
+                Dashboard
+              </Link>
 
-              <Link style={{textDecoration: "none",marginRight:10}} to="/features">Price Drop</Link>
-              <Link style={{textDecoration: "none"}} to="/contact">Contact Us</Link>
+              <Link style={style.nav} className="link" to="/contact">
+                Contact Us
+              </Link>
             </Nav>
             <Nav>
-              {/* <Nav.Link href="/login">
+              <Link style={style.nav} className="link" to="/login">
                 Login
-              </Nav.Link> */}
-              <Link style={{textDecoration: "none"}} to="/login">Login</Link>
+              </Link>
             </Nav>
-            <Nav.Link href="#deets">
+            <Link to="/contact" style={style.nav}>
               <div className="d-flex justify-content-around align-items-center">
                 <span>
                   <img src={contact} alt="" />
@@ -69,12 +43,19 @@ const Appbar = () => {
                   call us : <br /> (+800)348916
                 </span>
               </div>
-            </Nav.Link>
+            </Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
     </>
   );
+};
+const style = {
+  nav: {
+    textDecoration: "none",
+    marginRight: 10,
+    color: "black",
+  },
 };
 
 export default Appbar;
