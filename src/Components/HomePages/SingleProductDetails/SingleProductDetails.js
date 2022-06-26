@@ -37,7 +37,43 @@ const SingleProductDetails = (props) => {
   const detailsProducts = productsDetails?.find(
     (pDetails) => pDetails?.sellerdb.id == id
   );
-  console.log(detailsProducts);
+  const initialInfo = {
+    email: user.email,
+    phone: "",
+    name: detailsProducts.sellerdb.name,
+    price: detailsProducts.sellerdb.price,
+  };
+
+  const [modalInfo, setModalInfo] = useState(initialInfo);
+  console.log(modalInfo);
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const dataInfo = { ...modalInfo };
+    dataInfo[field] = value;
+    console.log(dataInfo);
+    setModalInfo(dataInfo);
+  };
+
+  const handleSubmitBtn = (e) => {
+    const product = {
+      ...modalInfo,
+    };
+
+    fetch("http://localhost:8996/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body:JSON.stringify(product)
+    })
+    .then(res=>res.json())
+    .then(data=> console.log(data))
+    e.preventDefault();
+   
+  };
+
+  // console.log(detailsProducts);
   return (
     <>
       {/* cart modal  */}
@@ -81,27 +117,44 @@ const SingleProductDetails = (props) => {
               <Form.Label>your email</Form.Label>
               <Form.Control
                 // onChange={handleOnChange}
+                disabled
                 type="name"
-                name="name"
+                name="email"
+                onBlur={handleOnBlur}
                 defaultValue={user.email}
                 placeholder="Your name"
               />{" "}
-              <Form.Label>Product name</Form.Label>
+              <Form.Label>Phone</Form.Label>
               <Form.Control
                 // onChange={handleOnChange}
+                type="number"
+                name="phone"
+                onBlur={handleOnBlur}
+                placeholder="Your Phone number"
+              />
+              <Form.Label>Product name</Form.Label>
+              <Form.Control
+                disabled
+                // onChange={handleOnChange}
                 type="name"
-                name="name"
+                name="productName"
+                onBlur={handleOnBlur}
                 defaultValue={detailsProducts?.sellerdb?.name}
                 placeholder="Your name"
               />
               <Form.Label>Product Price</Form.Label>
               <Form.Control
                 // onChange={handleOnChange}
+                disabled
                 type="name"
-                name="name"
+                name="price"
+                onBlur={handleOnBlur}
                 defaultValue={detailsProducts?.sellerdb?.price}
                 placeholder="price"
               />
+              <Button onClick={handleSubmitBtn} variant="primary">
+                Submit
+              </Button>
             </small>
           </Modal.Title>
         </Modal.Header>
