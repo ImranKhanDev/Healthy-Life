@@ -15,7 +15,7 @@ const Services = () => {
           <img
             src="./delivery.png"
             alt="delivery"
-            style={{ width: 350, height: 250 }}
+            style={{ width: 350, height: 350, borderRadius: "50%" }}
           />
           <div className="desc ">
             <h3>Get Free Home Delivery</h3>
@@ -54,7 +54,37 @@ const Services = () => {
           <img
             src="./return.png"
             alt="delivery"
-            style={{ width: 350, height: 250 }}
+            style={{ width: 350, height: 350, borderRadius: "50%" }}
+          />
+        </div>
+
+        <br />
+
+        <div className="service-content py-5 d-flex justify-content-between align-items-center">
+          <div className="desc right">
+            <h3>24/7 Customer Support Available.</h3>
+            <p>
+              At Source Support Services, we live up to our name. Whether for
+              on-site assistance, technical support, or remote support, Source
+              is here to ensure our customers’ success and end-users’ business
+              productivity. We offer dependable, on-demand support options
+              including 24/7 technical and remote support and 4-hour and next
+              business day global on-site support in over 100 countries
+              worldwide
+            </p>
+
+            <p>
+              Through our state-of-the-art training programs, Source Central
+              case management platform, U.S.-based Support Operations Center,
+              and our network of locally based field service professionals, we
+              deliver complete, one-stop technical product support services with
+              unparalleled scalability and expertise.
+            </p>
+          </div>
+          <img
+            src="./customer.png"
+            alt="delivery"
+            style={{ width: 350, height: 350, borderRadius: "50%" }}
           />
         </div>
       </div>

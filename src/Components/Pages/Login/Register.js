@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 const Register = () => {
   const navigate = useNavigate();
-  const { registerUser } = useAuth();
+  const { registerUser, user, authError } = useAuth();
 
   const [registerData, setRegisterData] = useState();
   const handleOnChange = (e) => {
@@ -20,11 +20,13 @@ const Register = () => {
   const handleRegister = (e) => {
     if (registerData.password !== registerData.password2) {
       alert("Your information is incorrect.Please check again");
+     
       return;
     }
+
     registerUser(registerData.email, registerData.password);
     alert("Your registration is successful");
-    navigate("/login");
+    // navigate("/login");
 
     e.preventDefault();
   };
@@ -35,7 +37,7 @@ const Register = () => {
       <div className="container">
         <div className="row">
           <div className="col text-start">
-           <Form onSubmit={handleRegister}>
+            <Form onSubmit={handleRegister}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control
@@ -84,8 +86,12 @@ const Register = () => {
               <Button variant="primary" type="submit" className="text-center">
                 Register
               </Button>
+
+              {user.email && (
+                <Alert variant="success">Your registration is Sucssful </Alert>
+              )}
+              {authError && <Alert variant="danger">{authError} </Alert>}
             </Form>
-       
 
             <p>
               <Link to="/login"> Are you are a member ? Login first.</Link>

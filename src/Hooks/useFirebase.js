@@ -13,6 +13,7 @@ import { useEffect } from "react";
 initializeFirebase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
+  const [authError, setAuthError] = useState("");
 
   const auth = getAuth();
 
@@ -20,14 +21,11 @@ const useFirebase = () => {
   const registerUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
+        setAuthError("");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        setAuthError(error.message);
+        console.log(error);
       });
   };
   // for logout
@@ -44,16 +42,15 @@ const useFirebase = () => {
 
   //login user -- existing user login
   const loginUser = (email, password) => {
-    const auth = getAuth;
+    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
+        setAuthError("");
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        setAuthError(error.message);
       });
   };
   // special observer
@@ -69,6 +66,6 @@ const useFirebase = () => {
     });
     return () => unsubscribe;
   }, []);
-  return { user, registerUser, logOut, loginUser };
+  return { user, registerUser, logOut, loginUser, authError };
 };
 export default useFirebase;

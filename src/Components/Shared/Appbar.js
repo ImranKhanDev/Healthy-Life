@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import contact from "../Assets/images/contact.png";
 const Appbar = () => {
-  const { user,logOut } = useAuth();
+  const { user, logOut } = useAuth();
   console.log(user);
   return (
     <>
@@ -32,21 +32,21 @@ const Appbar = () => {
                 <span> Contact Us</span>
               </Link>
             </Nav>
-           {
-            user && user.email ? (
+            {user && user.email ? (
               <Nav>
-              <Link style={style.nav} className="link" to="/login">
-                <span className="login" onClick={logOut}> logOut</span>
-              </Link>
-            </Nav>
-            ):(
+                <Link style={style.nav} className="link" to="/login">
+                  <span className="login" onClick={logOut}>
+                    {user.email} ("") logOut
+                  </span>
+                </Link>
+              </Nav>
+            ) : (
               <Nav>
-              <Link style={style.nav} className="link" to="/login">
-                <span className="login"> Login</span>
-              </Link>
-            </Nav>
-            )
-           }
+                <Link style={style.nav} className="link" to="/login">
+                  <span className="login"> Login</span>
+                </Link>
+              </Nav>
+            )}
             <Link to="/contact" style={style.nav}>
               <div className="ml-3 d-flex justify-content-around align-items-center">
                 <span>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form, Button, Alert } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 const Login = () => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState();
+  const { user, authError, loginUser } = useAuth();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -13,7 +16,9 @@ const Login = () => {
     // console.log(newLoginData);
   };
   const handleLogin = (e) => {
-    alert("user logged in");
+    loginUser(loginData.email, loginData.password);
+    navigate("/home");
+
     e.preventDefault();
   };
   return (
@@ -46,7 +51,8 @@ const Login = () => {
                   placeholder="Password"
                 />
               </Form.Group>
-
+              {user.email && <Alert variant="success">Sir ! You are in.</Alert>}
+              {/* {authError && <Alert variant="danger">{authError} </Alert>} */}
               <Button variant="primary" type="submit">
                 Submit
               </Button>
