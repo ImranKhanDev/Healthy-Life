@@ -18,6 +18,7 @@ import Contact from "./Components/Pages/Contact";
 import Dashboard from "./Components/Pages/Dashboard";
 import Register from "./Components/Pages/Login/Register";
 import AuthProvider from "./Contexts/AuthProvider/AuthProvider";
+import RequiredAuth from "./Components/Pages/Login/RequiredAuth/RequiredAuth";
 function App() {
   return (
     <div className="App">
@@ -25,17 +26,19 @@ function App() {
         <BrowserRouter>
           <Welcome />
           <Appbar />
+          <RequiredAuth path="/dashboard" element={<Dashboard />} />
+          <RequiredAuth
+            path="/singleProductDetails/:id"
+            element={<SingleProductDetails />}
+          />
+          <RequiredAuth path="/services" element={<Services />} />
           <Routes>
             <Route path="*" element={<NotFound />} />
 
-            <Route exact path="/home" element={<Home />} />
-            <Route
-              path="/singleProductDetails/:id"
-              element={<SingleProductDetails />}
-            />
-            <Route exact path="/about" element={<About />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/home" element={<Home />} />
+
+            <Route path="/about" element={<About />} />
+
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
