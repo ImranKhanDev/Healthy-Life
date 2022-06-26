@@ -16,8 +16,10 @@ import {
 } from "react-icons/bs";
 import { BiMessageAltDots, BiMessageEdit } from "react-icons/bi";
 import productsDB from "../../Assets/FakeData/productsDB";
+import useAuth from "../../../Hooks/useAuth";
 
 const SingleProductDetails = (props) => {
+  const { user } = useAuth();
   const { id } = useParams();
 
   const [show, setShow] = useState(false);
@@ -35,7 +37,7 @@ const SingleProductDetails = (props) => {
   const detailsProducts = productsDetails?.find(
     (pDetails) => pDetails?.sellerdb.id == id
   );
-
+  console.log(detailsProducts);
   return (
     <>
       {/* cart modal  */}
@@ -76,9 +78,30 @@ const SingleProductDetails = (props) => {
         <Modal.Header>
           <Modal.Title id="example-custom-modal-styling-title">
             <small>
-              {" "}
-              <BsCartCheckFill /> Product Successfully Added To Your Shopping
-              Cart
+              <Form.Label>your email</Form.Label>
+              <Form.Control
+                // onChange={handleOnChange}
+                type="name"
+                name="name"
+                defaultValue={user.email}
+                placeholder="Your name"
+              />{" "}
+              <Form.Label>Product name</Form.Label>
+              <Form.Control
+                // onChange={handleOnChange}
+                type="name"
+                name="name"
+                defaultValue={detailsProducts?.sellerdb?.name}
+                placeholder="Your name"
+              />
+              <Form.Label>Product Price</Form.Label>
+              <Form.Control
+                // onChange={handleOnChange}
+                type="name"
+                name="name"
+                defaultValue={detailsProducts?.sellerdb?.price}
+                placeholder="price"
+              />
             </small>
           </Modal.Title>
         </Modal.Header>

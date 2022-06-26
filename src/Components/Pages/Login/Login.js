@@ -5,7 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 const Login = () => {
   const [loginData, setLoginData] = useState();
   const { user, authError, loginUser, signInWithGoogle } = useAuth();
-
+  console.log(user);
   let navigate = useNavigate();
   // let location = useLocation();
 
@@ -67,8 +67,7 @@ const Login = () => {
             <p>
               <Link to="/register"> Are you a new user ? Register first.</Link>
             </p>
-         
-          
+
             <Button
               variant="primary"
               className="text-center"

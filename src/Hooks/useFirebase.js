@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
   signInWithPopup,
+  updateProfile,
   GoogleAuthProvider,
 } from "firebase/auth";
 
@@ -25,29 +26,33 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   // for register user : new users
-  const registerUser = (email, password, location, history) => {
+  const registerUser = (email, password, location, name, history) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // const destination = location.state.from || "/";
-        // navigate.replace(destination);
+        const newUser = { email, displayName: name };
 
+        setUser(newUser);
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {})
+          .catch((error) => {});
+
+        //  navigate("/home")
         setAuthError("");
       })
       .catch((error) => {
         setAuthError(error.message);
         console.log(error);
       });
+    // navigate("/home")
   };
   // for logout
   const logOut = () => {
     const auth = getAuth();
     signOut(auth)
-      .then(() => {
-      
-      })
-      .catch((error) => {
-
-      });
+      .then(() => {})
+      .catch((error) => {});
   };
 
   //login user -- existing user login
@@ -55,9 +60,7 @@ const useFirebase = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-       
         setAuthError("");
-
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -67,13 +70,9 @@ const useFirebase = () => {
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-       
         const user = result.user;
-        
       })
       .catch((error) => {
-       
-
         setAuthError(error.message);
       });
   };

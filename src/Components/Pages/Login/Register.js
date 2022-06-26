@@ -20,11 +20,15 @@ const Register = () => {
   const handleRegister = (e) => {
     if (registerData.password !== registerData.password2) {
       alert("Your information is incorrect.Please check again");
-     
+
       return;
     }
 
-    registerUser(registerData.email, registerData.password);
+    registerUser(
+      registerData.email,
+      registerData.password,
+      registerData?.displayName
+    );
     alert("Your registration is successful");
     // navigate("/login");
 

@@ -36,7 +36,7 @@ const Appbar = () => {
               <Nav>
                 <Link style={style.nav} className="link" to="/login">
                   <span className="login" onClick={logOut}>
-                    {user.email} ("") logOut
+                    {user?.displayName} ("") logOut
                   </span>
                 </Link>
               </Nav>
