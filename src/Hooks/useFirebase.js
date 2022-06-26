@@ -6,8 +6,12 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from "firebase/auth";
+
 import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 //initialize firebase aapp
 initializeFirebase();
@@ -15,12 +19,18 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [authError, setAuthError] = useState("");
 
+  // const location = useLocation();
+  // const navigate = useNavigate();
   const auth = getAuth();
+  const googleProvider = new GoogleAuthProvider();
 
   // for register user : new users
-  const registerUser = (email, password) => {
+  const registerUser = (email, password, location, history) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        // const destination = location.state.from || "/";
+        // navigate.replace(destination);
+
         setAuthError("");
       })
       .catch((error) => {
@@ -33,10 +43,10 @@ const useFirebase = () => {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+      
       })
       .catch((error) => {
-        // An error happened.
+
       });
   };
 
@@ -45,14 +55,29 @@ const useFirebase = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
+       
         setAuthError("");
-        // ...
+
       })
       .catch((error) => {
         setAuthError(error.message);
       });
   };
+  // login with gooogle
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+       
+        const user = result.user;
+        
+      })
+      .catch((error) => {
+       
+
+        setAuthError(error.message);
+      });
+  };
+
   // special observer
   useEffect(() => {
     const auth = getAuth();
@@ -66,6 +91,6 @@ const useFirebase = () => {
     });
     return () => unsubscribe;
   }, []);
-  return { user, registerUser, logOut, loginUser, authError };
+  return { user, signInWithGoogle, registerUser, logOut, loginUser, authError };
 };
 export default useFirebase;

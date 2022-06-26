@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 const Login = () => {
-  const navigate = useNavigate();
   const [loginData, setLoginData] = useState();
-  const { user, authError, loginUser } = useAuth();
+  const { user, authError, loginUser, signInWithGoogle } = useAuth();
+
+  let navigate = useNavigate();
+  // let location = useLocation();
 
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -21,6 +23,11 @@ const Login = () => {
 
     e.preventDefault();
   };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle();
+  };
+
   return (
     <div className="login">
       <h1>Welcome to Healthylife</h1>
@@ -53,13 +60,23 @@ const Login = () => {
               </Form.Group>
               {user.email && <Alert variant="success">Sir ! You are in.</Alert>}
               {/* {authError && <Alert variant="danger">{authError} </Alert>} */}
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onClick={handleLogin}>
                 Submit
               </Button>
             </Form>
             <p>
               <Link to="/register"> Are you a new user ? Register first.</Link>
             </p>
+         
+          
+            <Button
+              variant="primary"
+              className="text-center"
+              type="submit"
+              onClick={handleGoogleLogin}
+            >
+              Login With Google
+            </Button>
           </div>
           <div className="col">
             <img

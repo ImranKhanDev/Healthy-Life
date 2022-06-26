@@ -26,12 +26,7 @@ function App() {
         <BrowserRouter>
           <Welcome />
           <Appbar />
-          <RequiredAuth path="/dashboard" element={<Dashboard />} />
-          <RequiredAuth
-            path="/singleProductDetails/:id"
-            element={<SingleProductDetails />}
-          />
-          <RequiredAuth path="/services" element={<Services />} />
+
           <Routes>
             <Route path="*" element={<NotFound />} />
 
@@ -39,6 +34,31 @@ function App() {
 
             <Route path="/about" element={<About />} />
 
+            <Route
+              path="/dashboard"
+              element={
+                <RequiredAuth>
+                  <Dashboard />
+                </RequiredAuth>
+              }
+            ></Route>
+            <Route
+              path="/singleProductDetails/:id"
+              element={
+                <RequiredAuth>
+                  <SingleProductDetails />
+                </RequiredAuth>
+              }
+            ></Route>
+
+            <Route
+              path="/services"
+              element={
+                <RequiredAuth>
+                  <Services />
+                </RequiredAuth>
+              }
+            ></Route>
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
