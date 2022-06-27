@@ -44,39 +44,6 @@ const SingleCategories = ({ pd }) => {
             </Card.Body>
           </Card>
         </Col>
-        <Col className="singleCat" style={{ marginRight: "20px" }}>
-          <Card
-            style={{
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              border: "none",
-            }}
-          >
-            <Card.Body className="d-flex  justify-content-between align-items-center">
-              <div className="images">
-                <Card.Img
-                  variant="top"
-                  className="card-img"
-                  style={{
-                    height: "163px",
-                    width: "540px",
-                  }}
-                  src={pd?.category?.img}
-                />
-              </div>
-              <div
-                className="content"
-                style={{ padding: "0px 15px", textAlign: "left" }}
-              >
-                <Card.Title>{pd.category?.name}</Card.Title>
-                <Card.Text>{pd.category?.total}</Card.Text>
-                <button className="btn">
-                  Shop Now <BiRightArrow className="arrow" size={40} />
-                </button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
       </div>
     </>
   );
