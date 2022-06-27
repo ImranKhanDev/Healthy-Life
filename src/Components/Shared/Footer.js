@@ -51,13 +51,7 @@ const Footer = () => {
         <Col>
           <Card.Text>
             <h5>HEALTHY LIFE</h5>
-            <hr
-              className="hr-style"
-              style={{
-              
-              }}
-            />{" "}
-            <br />
+            <hr className="hr-style" style={{}} /> <br />
           </Card.Text>
           <Card.Text
             style={{
@@ -67,19 +61,19 @@ const Footer = () => {
               color: "grey",
             }}
           >
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Delivery{" "}
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Secure Payment
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               About Us
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Contact Us
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Stores
             </Link>
           </Card.Text>
@@ -87,13 +81,7 @@ const Footer = () => {
         <Col>
           <Card.Text>
             <h5>Custom Links</h5>
-            <hr
-            className="hr-style"
-              style={{
-              
-              }}
-            />{" "}
-            <br />
+            <hr className="hr-style" style={{}} /> <br />
           </Card.Text>
           <Card.Text
             style={{
@@ -103,19 +91,19 @@ const Footer = () => {
               paddingTop: "10px",
             }}
           >
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Legal Notice{" "}
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Prices Drop
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               New Products
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               Best Sales
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
               My Account
             </Link>
           </Card.Text>
@@ -123,13 +111,7 @@ const Footer = () => {
         <Col>
           <Card.Text>
             <h5>NewsLetter</h5>
-            <hr
-              className="hr-style"
-              style={{
-              
-              }}
-            />{" "}
-            <br />
+            <hr className="hr-style" style={{}} /> <br />
           </Card.Text>
           <Card.Text>
             <p>
@@ -154,9 +136,7 @@ const Footer = () => {
               alt="google play image"
               className="gp"
             />
-            <img src={playStore}
-            className="ps"
-            alt="google play image" />
+            <img src={playStore} className="ps" alt="google play image" />
           </Card.Text>
         </Col>
       </Row>

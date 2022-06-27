@@ -45,7 +45,7 @@ const SingleProductDetails = (props) => {
   };
 
   const [modalInfo, setModalInfo] = useState(initialInfo);
-  console.log(modalInfo);
+  // console.log(modalInfo);
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -56,6 +56,7 @@ const SingleProductDetails = (props) => {
   };
 
   const handleSubmitBtn = (e) => {
+    alert("Order has been submitted successfully.")
     const product = {
       ...modalInfo,
     };

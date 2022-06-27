@@ -10,7 +10,7 @@ const SingleSeller = ({ pd }) => {
     <>
       <div className="my-5">
         <Link
-          to={`/singleProductDetails/${pd.sellerdb?.id}`}
+          href={`/singleProductDetails/${pd.sellerdb?.id}`}
           style={{ textDecoration: "none", color: "black", fontWeight: "700" }}
         >
           <Col style={{ marginRight: "20px" }}>
@@ -43,8 +43,8 @@ const styles = {
     backgroundColor: "#FFC107",
     padding: "2px 8px",
     color: "black",
-    borderRadius:"5px",
-    border:'none',
+    borderRadius: "5px",
+    border: "none",
   },
 };
 export default SingleSeller;

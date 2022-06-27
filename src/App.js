@@ -22,8 +22,8 @@ import RequiredAuth from "./Components/Pages/Login/RequiredAuth/RequiredAuth";
 function App() {
   return (
     <div className="App">
-      <AuthProvider>
         <BrowserRouter>
+      <AuthProvider>
           <Welcome />
           <Appbar />
 
@@ -34,14 +34,14 @@ function App() {
 
             <Route path="/about" element={<About />} />
 
-            <Route
+            {/* <Route
               path="/dashboard"
               element={
                 <RequiredAuth>
                   <Dashboard />
                 </RequiredAuth>
               }
-            ></Route>
+            ></Route> */}
             <Route
               path="/singleProductDetails/:id"
               element={
@@ -64,8 +64,8 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
       </AuthProvider>
+        </BrowserRouter>
     </div>
   );
 }
