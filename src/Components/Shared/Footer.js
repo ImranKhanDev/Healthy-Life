@@ -61,19 +61,19 @@ const Footer = () => {
               color: "grey",
             }}
           >
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Delivery{" "}
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Secure Payment
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               About Us
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Contact Us
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Stores
             </Link>
           </Card.Text>
@@ -91,19 +91,19 @@ const Footer = () => {
               paddingTop: "10px",
             }}
           >
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Legal Notice{" "}
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Prices Drop
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               New Products
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               Best Sales
             </Link>
-            <Link style={{ color: "grey", textDecoration: "none" }} href="/">
+            <Link style={{ color: "grey", textDecoration: "none" }} to="/">
               My Account
             </Link>
           </Card.Text>

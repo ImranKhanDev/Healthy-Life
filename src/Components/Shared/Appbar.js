@@ -11,30 +11,30 @@ const Appbar = () => {
     <>
       <div className="appbar-fluid appbar" style={{ paddingLeft: 18 }}>
         <Navbar collapseOnSelect expand="lg">
-          <Link style={style.nav} href="/home" className="logo">
+          <Link style={style.nav} to="/home" className="logo">
             Healthylife
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="me-auto navbar-lil ">
-              <Link style={style.nav} className="link" href="/about">
+              <Link style={style.nav} className="link" to="/about">
                 <span> About</span>{" "}
               </Link>
-              <Link style={style.nav} className="link" href="/services">
+              <Link style={style.nav} className="link" to="/services">
                 <span> Services</span>
               </Link>
 
-              <Link style={style.nav} className="link" href="/dashboard">
+              <Link style={style.nav} className="link" to="/dashboard">
                 <span> Dashboard</span>
               </Link>
 
-              <Link style={style.nav} className="link" href="/contact">
+              <Link style={style.nav} className="link" to="/contact">
                 <span> Contact Us</span>
               </Link>
             </Nav>
             {user && user.email ? (
               <Nav>
-                <Link style={style.nav} className="link" href="/login">
+                <Link style={style.nav} className="link" to="/login">
                   <span className="login" onClick={logOut}>
                     {user?.displayName} ("") logOut
                   </span>
@@ -42,12 +42,12 @@ const Appbar = () => {
               </Nav>
             ) : (
               <Nav>
-                <Link style={style.nav} className="link" href="/login">
+                <Link style={style.nav} className="link" to="/login">
                   <span className="login"> Login</span>
                 </Link>
               </Nav>
             )}
-            <Link href="/contact" style={style.nav}>
+            <Link to="/contact" style={style.nav}>
               <div className="ml-3 d-flex justify-content-around align-items-center">
                 <span>
                   <img src={contact} alt="" />

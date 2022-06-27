@@ -65,10 +65,7 @@ const Login = () => {
               </Button>
             </Form>
             <p>
-              <Link href="/register">
-                {" "}
-                Are you a new user ? Register first.
-              </Link>
+              <Link to="/register"> Are you a new user ? Register first.</Link>
             </p>
 
             <Button

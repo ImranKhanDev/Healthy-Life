@@ -10,7 +10,7 @@ const SingleSeller = ({ pd }) => {
     <>
       <div className="my-5">
         <Link
-          href={`/singleProductDetails/${pd.sellerdb?.id}`}
+          to={`/singleProductDetails/${pd.sellerdb?.id}`}
           style={{ textDecoration: "none", color: "black", fontWeight: "700" }}
         >
           <Col style={{ marginRight: "20px" }}>

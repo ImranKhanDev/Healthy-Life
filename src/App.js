@@ -3,7 +3,7 @@ import "./App.css";
 import "./Components/Assets/CSS/Style.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Components/HomePages/Home";
 import Footer from "./Components/Shared/Footer";
 import Appbar from "./Components/Shared/Appbar";
@@ -22,31 +22,27 @@ import RequiredAuth from "./Components/Pages/Login/RequiredAuth/RequiredAuth";
 function App() {
   return (
     <div className="App">
-        <BrowserRouter>
-      <AuthProvider>
+      <BrowserRouter>
+        <AuthProvider>
           <Welcome />
           <Appbar />
 
           <Routes>
             <Route path="*" element={<NotFound />} />
-
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Navigate to="/" />} />
 
             <Route path="/about" element={<About />} />
 
-            {/* <Route
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route
               path="/dashboard"
               element={
                 <RequiredAuth>
                   <Dashboard />
-                </RequiredAuth>
-              }
-            ></Route> */}
-            <Route
-              path="/singleProductDetails/:id"
-              element={
-                <RequiredAuth>
-                  <SingleProductDetails />
                 </RequiredAuth>
               }
             ></Route>
@@ -59,13 +55,18 @@ function App() {
                 </RequiredAuth>
               }
             ></Route>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route
+              path="/singleProductDetails/:id"
+              element={
+                <RequiredAuth>
+                  <SingleProductDetails />
+                </RequiredAuth>
+              }
+            ></Route>
           </Routes>
           <Footer />
-      </AuthProvider>
-        </BrowserRouter>
+        </AuthProvider>
+      </BrowserRouter>
     </div>
   );
 }

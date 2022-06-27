@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <>
       <h1>NotFound</h1>
-      <Link href="/">
+      <Link to="/">
         <button style={styles.back}>Go Back</button>
       </Link>
     </>
