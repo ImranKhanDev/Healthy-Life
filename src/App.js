@@ -19,6 +19,12 @@ import Dashboard from "./Components/Pages/Dashboard";
 import Register from "./Components/Pages/Login/Register";
 import AuthProvider from "./Contexts/AuthProvider/AuthProvider";
 import RequiredAuth from "./Components/Pages/Login/RequiredAuth/RequiredAuth";
+import MakeAdmin from "./Components/Pages/Login/RequiredAuth/MakeAdmin/MakeAdmin";
+import ManageProduct from "./Components/Pages/Login/RequiredAuth/ManageProduct/ManageProduct";
+import AddReview from "./Components/Pages/Login/RequiredAuth/AddReview/AddReview";
+import AddProduct from "./Components/Pages/Login/RequiredAuth/AddProduct/AddProduct";
+
+
 function App() {
   return (
     <div className="App">
@@ -45,7 +51,12 @@ function App() {
                   <Dashboard />
                 </RequiredAuth>
               }
-            ></Route>
+            >
+              <Route path="admin" element={<MakeAdmin/>} />
+              <Route path="manageProduct" element={<ManageProduct/>} />
+              <Route path="review" element={<AddReview/>} />
+              <Route path="addproduct" element={<AddProduct/>} />
+            </Route>
 
             <Route
               path="/services"

@@ -26,19 +26,19 @@ import { Link } from "react-router-dom";
 
 // import GiveReview from "./GiveReview/GiveReview";
 const Dashboard = () => {
-  let  location  = useLocation();
+  let location = useLocation();
 
   return (
     <div className="mt-1  container-fluid">
       <h1>Welcome to Healthylife Dashboard</h1>
-      <p> Dashboard feature is coming soon..</p>
-      <Row className="row">
+
+      <Row className="row ">
         <Col className="mt-5 left-dash col-md-4">
           <ul>
             <li>
               <Link
                 style={{ textDecoration: "none", fontSize: "22px" }}
-                to={location}
+                to={`${location}/makeAdmin`}
               >
                 Make Admin
               </Link>
@@ -56,29 +56,29 @@ const Dashboard = () => {
               </Link>
               <hr />
             </li>
-        
-              <Link
-                style={{
-                  textDecoration: "none",
-                  fontSize: "22px",
-                }}
-                to={`${location}/manegeProducts`}
-              >
-                Manege Products
-              </Link>
-        
+
+            <Link
+              style={{
+                textDecoration: "none",
+                fontSize: "22px",
+              }}
+              to={`${location}/manegeProducts`}
+            >
+              Manege Products
+            </Link>
+
             <hr />
-           
-              <Link
-                style={{
-                  textDecoration: "none",
-                  fontSize: "22px",
-                }}
-                to={`${location}/addReview`}
-              >
-                Give Review
-              </Link>
-         
+
+            <Link
+              style={{
+                textDecoration: "none",
+                fontSize: "22px",
+              }}
+              to={`${location}/addReview`}
+            >
+              Give Review
+            </Link>
+
             <hr />
           </ul>
         </Col>

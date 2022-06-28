@@ -423,17 +423,18 @@ h3 {
 }
 .right {
   text-align: left;
-  
 }
 /* dashboard */
-
 
 .contain {
   width: 98%;
 }
 .left-dash {
-  background: rgb(248, 241, 241);
+  background: rgb(0 0 0);
   color: #080808;
+  height: 650px;
+  display: flex;
+  align-items: center;
 }
 .left-dash ul {
   list-style: none;
@@ -443,4 +444,3 @@ h3 {
 .left-dash li {
   margin-top: 15px;
 }
-
